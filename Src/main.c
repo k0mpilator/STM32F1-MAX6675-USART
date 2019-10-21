@@ -151,13 +151,13 @@ int main(void)
       if(temper_err == MAX6675_TRUE)
       {
           temper = max6675Temp(reg);
-          sprintf((char*)string, "Temperature:%0.2f\n\r", temper);
+          sprintf((char*)string, "Track:1 Temperature:%0.2f\r", temper);
       }
       else
       {
-          sprintf((char*)string, "Temperature: error!\n\r");
+          sprintf((char*)string, "Track:1 Temperature: error!\n\r");
       }
-      printf(string, sizeof(string));
+      //printf(string, sizeof(string));
       HAL_UART_Transmit(&huart1, string, sizeof(string), 100);
       HAL_Delay(1000);
     /* USER CODE END WHILE */
